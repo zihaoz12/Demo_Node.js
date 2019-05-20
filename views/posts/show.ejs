@@ -1,0 +1,48 @@
+<% include ../partials/head %>
+<% include ../partials/header %>
+
+
+<div class="container">
+	<div class="posts-container">
+		<div class="main-item">
+			<img class="post-img"src="<%= post.imgUrl%>">
+		</div>
+
+		<div class="item-title">
+			<h1>Item Title: <%= post.title%></h1>
+		</div>
+
+		<div class="item-author">
+			<h5>Created by:
+		</div>
+
+		<div class="item-desc">
+			<p>item description:<%=post.description%></p>
+		</div>
+	</div>
+
+	
+
+    <div class="edit-delete">
+    	<div class="edit">
+    		<a href="/posts/<%=post._id%>/edit"><span><i class="fas fa-edit fa-lg"></i></span></a>
+    	</div>
+    	<div class="delete">
+        	<form action="/posts/<%=post._id%>?_method=DELETE" method="POST">
+            	<button type="submit"><span><i class="fas fa-trash-alt fa-lg"></i></span></button>
+        	</form>
+    	</div>
+	</div>
+
+	<div class="go-back">
+        <a href="/posts">Go Back</a>
+    </div>
+	
+
+</div>
+
+<%include comment%>
+
+
+
+<% include ../partials/footer %>

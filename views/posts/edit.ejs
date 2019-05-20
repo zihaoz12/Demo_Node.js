@@ -1,0 +1,27 @@
+<% include ../partials/head %>
+<% include ../partials/header %>
+
+<main>
+<div class="container">
+<h1>Edit <%=post.title%></h1>
+    <form class="posts-form" id="editFrom" action="/posts/<%= post._id%>/?_method=PUT" method="POST">
+        <label for="title"></label>
+            <input value="<%=post.title%>" type="text"  name="title" placeholder="Title"/>
+        <label ></label> 
+            <input value="<%=post.imgUrl%>" type="text"  name="imgUrl" placeholder="imgUrl..."/>
+        <label for="message"></label>
+             <textarea id="desc" name="description" rows="5" placeholder="Description" value="<%=post.description%>"></textarea>
+        <span id="status"></span>
+        <button type="submit" id="submitButton" name="submit">Update</button>
+    </form>
+
+    <div class="go-back">
+        <a href="/posts/<%=post._id%>">Go Back</a>
+    </div>
+</div>
+</main>
+
+
+
+
+

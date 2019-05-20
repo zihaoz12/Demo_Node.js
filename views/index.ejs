@@ -1,0 +1,46 @@
+<% include partials/head%>
+<% include partials/header%>
+
+<main>
+    <div class="container">
+    <section class="jumbotron">
+        <div class="video">
+            <div class="video-frame">
+               <img src="/media/ocean/overlay-hero.png" alt="image frame"></img> 
+            </div>
+            <div class="video-media">
+                <video playsinline autoplay loop muted data-autoplay x5-video-player-type="h5" poster="/media/ocean/ocean.png">
+                    <source src="/media/ocean/ocean.mp4" type="video/mp4">
+                    <source src="/media/ocean/ocean.ogv" type="video/ogv">
+                    <source src="/media/ocean/ocean.webm" type="video/webm">
+                    <p>Your user agent does not support the HTML5 Video</p>
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+
+        </div>
+    </section>
+    </div>
+
+
+
+        <div class="home">
+            <div class="container">
+                <div class="entry-header">
+                    <h1>Hello World</h1>
+                    <p>About Life, Images and Code</p>
+                    <a class='to-posts' href="/posts">browse the gallery</a>
+                    <!-- <br/>
+                    <button><a href="/posts/new">Create New Post</button> -->
+                </div>              
+            </div>  
+
+                     
+        </div>
+
+       
+            
+</main>
+
+
+<% include partials/footer%>

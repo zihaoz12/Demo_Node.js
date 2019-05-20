@@ -1,0 +1,374 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-weight: 400;
+    font-style: normal;
+    color:#444;
+    margin:0;
+    font-size: 16px;
+}
+a{
+    text-decoration: none;
+    color: #555;
+    border-color: transparent;
+    transition: color 0.2s ease;
+}
+
+div{
+    display: block;
+}
+
+.container{
+    max-width: 960px;
+    margin:0 auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+header{
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    font-family: 'Open Sans',sans-serif;
+}
+
+header .container{
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a{
+    margin-left:2rem;
+    text-transform: uppercase;
+}
+
+.header-nav a{
+    position: relative;
+}
+
+.header-nav a::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    transition:linear all 0.3s;
+    border-bottom: 2px solid #555;
+}
+
+.header-nav a:hover::before{
+    width: 100%;
+    right: 0;
+}
+
+
+.homebutton{
+    display: block;
+}
+
+main{
+    display: block;
+    flex: 1 0 auto;
+}
+
+.home .entry-header{
+    padding:2rem 0;
+    text-align: center;
+}
+
+.home .entry-header p{
+    font-size:1.25rem;
+    color: #878787;
+}
+
+.to-posts{
+    display: inline-block;
+    border-radius: 25px;
+    margin-top:15px;
+    padding: 15px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    border: 1px solid #ddd;
+}
+
+.entry-lists{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left:-3%;
+    margin-right: -0.1%;
+    height: 980px;
+    overflow: hidden;
+}
+
+.entry-lists article{
+    position: relative;
+    width: 290px;
+    height: 290px;
+    margin-top:3%;
+    margin-left: 3%;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    /*overflow: scroll;*/
+    flex:1 0 auto;
+}
+
+.entry-lists article .post-thumb{
+    width:100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.entry-lists article a{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.entry-lists article a:hover {
+    opacity: 1;
+    color: #fff;
+    background-color: rgba(0,0,0,0.4);
+}
+.pagintor{
+    margin: 3rem 0;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+}
+
+.more{
+    padding-top:2.00rem;
+    width:7rem;
+    height:5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    border-radius: 30%;
+    color:#444;
+}
+/*================== ========================*/
+
+/*===================jumbtron===========*/
+.jumbotron{
+    padding: 0;
+    text-align: center;
+}
+
+.video{
+    position: relative;
+    height: auto;
+}
+
+.video-frame{
+    position: absolute;
+    z-index: 1;
+    min-width: 100%;
+    right: 0;
+    bottom:0;
+    left: 0;
+}
+
+.video-frame img{
+    display: block;
+    width: 100%;
+}
+.video-media{
+    position: relative;
+    z-index: 0;
+    height: 50vh;
+    overflow: hidden;
+}
+
+.video-media video{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    min-height: 100%;
+    min-width: 100%;
+}
+
+
+/*Create New routes*/
+form{
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
+}
+.posts-form input,textarea{
+    font-size: 0.8rem;
+    border:1px solid #ddd;
+    background-color: #fff;
+    margin:5px 0;
+    width:100%;
+    padding: 0.5rem 0.7rem;
+    display: inline-block;
+}
+.posts-form button{
+    color:#777;
+    background-color: #fff;
+    padding:4px 12px;
+    border:2px solid #777;
+    text-decoration: none;
+    transition: ease-in-out all 0.3s;
+    text-align: center;
+    cursor: pointer;
+}
+
+textarea{
+    overflow: auto;
+}
+
+
+/*================== ========================*/
+/*show routes*/
+.posts-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.main-item{
+    margin: 1.5rem auto;
+}
+.post-img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    vertical-align: middle;
+    border-style: none;
+}
+
+.item-title{
+  
+}
+
+.item-title h1{
+    letter-spacing: 1px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-family: 'Crimson Text',sans-serif;
+    color:inherit;
+}
+
+.item-desc{
+    line-height: 2;
+    color:#555;
+}
+/*===================*/
+.go-back{
+    margin: 20px auto;
+
+}
+.go-back a{
+    font-size:18px;
+    margin: 5px;
+    position: relative;
+}
+
+.go-back a::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    transition:linear all 0.3s;
+    border-bottom: 2px solid #555;
+}
+
+.go-back a:hover::before{
+    width: 100%;
+    right: 0;
+}
+
+
+/*===================*/
+.edit-delete{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+}
+
+/*==================Comments ========================*/
+.comment-container{
+    margin: 20px 20%;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap:break-word;
+    max-width: 960px;
+}
+
+.comment-container div{
+    box-sizing: border-box;
+}
+
+.comments{
+    border:1px solid #f0f0f0;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    position: relative;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.comments-header a{
+    float: right;
+    color: blue;
+}
+
+.comments-text{
+    width: 100%;
+    height: 8.75rem;
+    font-size: .875rem;
+    background: transparent;
+}
+
+.comments-control{
+    float: right;
+}
+/*================== ========================*/
+.back-to-top{
+    position: fixed;
+    right: 100px;
+    bottom: 100px;
+    display: none;
+}
+
+
+
+
+/*================== ========================*/
+footer{
+    display: flex;
+    justify-content: center;
+    border-top:1px solid #efefef;   
+}
+
+.icon-row{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
