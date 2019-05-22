@@ -4,10 +4,15 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const PORT = process.env.PORT || 3000;
+const passport = require('passport');
+const LocalStrategy = require('passport-local');
 
 require('./db/db');
 
+const User = require('./models/user');
+
 const postController = require('./controllers/postController');
+const userController = require('./controllers/userController');
 
 app.use(session({
   secret: 'keyboard cat',
@@ -20,9 +25,19 @@ app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 app.use(express.static(__dirname + '/public'));
 
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+app.use((req,res,next)=>{
+	res.locals.currentUser = req.user;
+	next();
+});
 
 app.use('/posts',postController);
-
+app.use('/',userController);
 
 app.get('/',(req,res)=>{
 	res.render('index.ejs')

@@ -8,6 +8,7 @@ router.get('/',async(req,res)=>{
 	const allPosts = await Posts.find({});
 	res.render('posts/posts.ejs',{
 		posts:allPosts,
+		currentUser:req.user
 	})
 });
 
@@ -21,7 +22,7 @@ router.post('/',async(req,res)=>{
 		Posts.create(req.body,(err,createPost)=>{
 			if(err){
 				res.send(err)
-			}else{
+			}else{				
 				res.redirect('/posts')
 			}
 		})

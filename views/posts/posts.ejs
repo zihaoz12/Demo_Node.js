@@ -7,7 +7,10 @@
                 <div class="entry-header">
                     <h1>Hello World</h1>
                     <p>About Life, Images and Code</p>
+                    <% if (currentUser != undefined){ %> 
+                    <h3> WelCome <%=currentUser.username%></h3>                   
                     <button><a href="/posts/new">Create New Post</button>
+                    <%   } %>
                 </div>
 
                 <div class="entry-lists">
@@ -30,8 +33,10 @@
             
         </div>
 
-        <div class="pagintor">
-            <a href="#" class="more"> See More</a>
+        <div class="container">
+            <div class="pagintor">
+                <a href="#" class="more"> See More</a>
+            </div>
         </div>
             
 </main>

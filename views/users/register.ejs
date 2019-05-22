@@ -4,8 +4,8 @@
 <div class="container">
     <div class="login-box">
     	<div class="lb-header">
-      		<a href="#" class="active" id="login-box-link">Login</a>
-      		<a href="/register" id="signup-box-link">Sign Up</a>
+      		<a href="/auth/login"  id="login-box-link">Login</a>
+      		<a href="/auth/register" class="active" id="signup-box-link">Sign Up</a>
     	</div>
 
     <div class="social-login">
@@ -19,21 +19,21 @@
       </a>
     </div>
 
-    <form class="user-login" action="/login" method="POST">
+
+    <form class="user-signup" action="/register" method=POST>
       <div class="u-form-group">
-        <input type="username" placeholder="UserName" name="username"/>
+        <input type="username" placeholder="UseName" name="username"/>
       </div>
       <div class="u-form-group">
         <input type="password" placeholder="Password" name="password"/>
       </div>
       <div class="u-form-group">
-        <button>Log in</button>
+        <input type="password" placeholder="Confirm Password" name="confirm_password"/>
       </div>
       <div class="u-form-group">
-        <a href="#" class="forgot-password">Forgot password?</a>
+        <button>Sign Up</button>
       </div>
     </form>
-
 
   	</div>
 </div>
