@@ -65,23 +65,27 @@ router.get('/:id',async(req,res)=>{
 });
 
 //edit routes
-router.get('/:id/edit',async(req,res)=>{
+router.get('/:id/edit',checkPostsOwner,async(req,res)=>{
+	
 	try{
 		Posts.findById(req.params.id,(err,foundPost)=>{
 			if(err){
 				res.send(err)
 			}else{
-				res.render('posts/edit.ejs',{
-					post:foundPost
-				})
+			
+					res.render('posts/edit.ejs',{
+						post:foundPost
+					});
+								
 			}
 		})
 	}catch(error){
 		res.send(error)
 	}
+	
 });
 
-router.put('/:id',async(req,res)=>{
+router.put('/:id',checkPostsOwner,async(req,res)=>{
 	try{
 		Posts.findByIdAndUpdate(req.params.id,req.body, {new:true},(err,updatePost)=>{
 			if(err){
@@ -96,12 +100,12 @@ router.put('/:id',async(req,res)=>{
 });
 
 //Delete routes
-router.delete('/:id',(req,res)=>{
+router.delete('/:id',checkPostsOwner,(req,res)=>{
 	Posts.findByIdAndRemove(req.params.id,(err,deletePost)=>{
 		if(err){
 			res.send(err)
 		}else{
-			console.log("delete post")
+			req.flash("success","Delete post successfully")
 			res.redirect('/posts')
 		}
 	})
@@ -115,6 +119,26 @@ function isLoggedIn(req,res,next){
 	res.redirect('/login')
 }
 
+function checkPostsOwner(req,res,next){
+    if(req.isAuthenticated()){
+        Posts.findById(req.params.id, (err,foundPost)=>{
+			if(err){
+				req.flash('error',"something wrong with this posts");
+				res.redirect("back")
+			}else{
+				if(foundPost.author.username == req.user.username){
+					next();
+				}else{
+					req.flash("error","You Don't have permission to do this");
+					res.redirect('back')
+				}
+			}
+		})
+    }else{
+		req.flash("error","You need to login to do this");
+		res.redirect("back")
+	}
+}
 
 
 module.exports = router;

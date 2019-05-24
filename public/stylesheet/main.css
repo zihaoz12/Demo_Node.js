@@ -33,6 +33,7 @@ header{
     position: relative;
     border-bottom: 1px solid #ddd;
     font-family: 'Open Sans',sans-serif;
+    background-color: #fff;
 }
 
 header .container{
@@ -87,7 +88,7 @@ main{
     color: #878787;
 }
 
-.to-posts{
+.entry-header .to-posts{
     display: inline-block;
     border-radius: 25px;
     margin-top:15px;
@@ -97,6 +98,15 @@ main{
     letter-spacing: 0.15rem;
     text-transform: uppercase;
     border: 1px solid #ddd;
+}
+
+.to-posts:hover{
+    color: #fff;
+    background: #222;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
 }
 
 .entry-lists{
@@ -373,6 +383,7 @@ footer{
     display: flex;
     justify-content: center;
     border-top:1px solid #efefef;   
+    background-color: #fff;
 }
 
 .icon-row{
