@@ -1,6 +1,8 @@
 <% include ../partials/head%>
 <% include ../partials/header%>
 
+<% include ../partials/message%>
+
 <main>
         <div class="home">
             <div class="container">
@@ -8,9 +10,9 @@
                     <h1>Hello World</h1>
                     <p>About Life, Images and Code</p>
                     <% if (currentUser != undefined){ %> 
-                    <h3> WelCome <%=currentUser.username%></h3>                   
-                    <button><a href="/posts/new">Create New Post</button>
+                    <h3> WelCome <%=currentUser.username%></h3>                                     
                     <%   } %>
+                    <button><a href="/posts/new">Create New Post</button>
                 </div>
 
                 <div class="entry-lists">
@@ -20,7 +22,7 @@
             					<a href="/posts/<%=posts[i]._id%>">
                 					<h3 class="item-name"><%= posts[i].title%></h3>
                 				<div class="item-author">
-                    				<p>item author</p>
+                    				<p><%= posts[i].author.username%></p>
                 				</div>
             					</a>
         				</div>

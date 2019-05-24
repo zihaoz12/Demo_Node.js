@@ -169,6 +169,14 @@ main{
     color:#444;
 }
 /*================== ========================*/
+.alert{
+    border: 1px solid black;
+    margin-top: 30px;
+    padding: 2px;
+}
+.alert-danger{
+    color: red;
+}
 
 /*===================jumbtron===========*/
 .jumbotron{
