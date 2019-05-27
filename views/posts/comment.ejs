@@ -5,27 +5,24 @@
 		<div class="comments">
 			<div class="comments-header">
 				<h3>Comments</h3>
+				<% post.comments.forEach(function(comment){%>
 					<div class="comment-lists">
-					<% post.comments.forEach(function(comment){%>
-						<a>By <%= comment.author.username%></a>
-						<h5><%=comment.commentText%></h5>
+					
+					<a><%= comment.author.username%>: </a>			
+					<p>  <%=comment.commentText%></p>
 						
 					</div>
-					<% }) %>
-		
+					<% }) %>		
 			</div>
-			<form action="/posts/<%= post._id%>/comments" method="POST">
+
+			
             <div class="comments-body">
-               	<textarea class="comments-text" name="commentText" placeholder="comments here"></textarea>
-            </div>
-               	<div class="comments-control">
-               		<div>
-               			
+				<form action="/posts/<%= post._id%>/comments" method="POST">
+               	<textarea class="comments-text" name="commentText" placeholder="Comments here....."></textarea>
+               		<div class="comments-control">
+               			<button type='submit' id="submitButton" name="subm">Send</button>               		
                		</div>
-               		<div>
-               			<button type='submit'>Send</button>
-               		</div>
-               	</div>
+				</form>	
 			</div>
-			</form>	
+			
 	</div>

@@ -27,6 +27,7 @@ div{
     margin:0 auto;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    height: auto;
 }
 
 header{
@@ -164,6 +165,26 @@ main{
     display: flex;
     align-content: center;
     justify-content: center;
+    border: 1px solid transparent;
+}
+
+#createPost{
+    font-size:16px;
+    padding: 8px 25px;
+    background: #fff;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#createPost:hover{
+    color: white;
+    text-decoration: none;
+    transition: ease-in-out all 0.3s;
+    background: #ea6f5a;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
 }
 
 .more{
@@ -180,14 +201,22 @@ main{
 }
 /*================== ========================*/
 .alert{
-    border: 1px solid black;
+    border-radius: 6px;
     margin-top: 30px;
-    padding: 2px;
+    padding: 10px;
 }
 .alert-danger{
-    color: red;
+    border: 1px solid red;
+    background-color: #ffe8e6;
+    color:#db2828;
+    box-shadow: 0 0 0 1px #db2828 inset, 0 0 0 0 transparent;
 }
-
+.alert-success{
+    border: 1px solid greenyellow;
+    background-color: #e5f9e7;
+    color: #1ebc30;
+    box-shadow: 0 0 0 1px #1ebc30 inset, 0 0 0 0 transparent;
+}
 /*===================jumbtron===========*/
 .jumbotron{
     padding: 0;
@@ -230,7 +259,7 @@ main{
 
 
 /*Create New routes*/
-form{
+.posts-form{
     max-width: 500px;
     margin: 0 auto;
     display: block;
@@ -279,9 +308,6 @@ textarea{
     border-style: none;
 }
 
-.item-title{
-  
-}
 
 .item-title h1{
     letter-spacing: 1px;
@@ -298,7 +324,6 @@ textarea{
 /*===================*/
 .go-back{
     margin: 20px auto;
-
 }
 .go-back a{
     font-size:18px;
@@ -353,8 +378,14 @@ textarea{
 }
 
 .comments-header a{
-    float: right;
+    float: left;
     color: blue;
+}
+
+.comment-lists{
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
 }
 
 .comments-text{
@@ -362,11 +393,32 @@ textarea{
     height: 8.75rem;
     font-size: .875rem;
     background: transparent;
+    background-color:#fff;
+    border:1px solid #dcdcdc;
+    border-radius: 4px;
 }
 
-.comments-control{
+.comments-control button{
     float: right;
+    color:#777;
+    background-color: #fff;
+    padding:4px 12px;
+    border:2px solid #777;
+    text-decoration: none;
+    transition: ease-in-out all 0.3s;
+    text-align: center;
+    cursor: pointer;
 }
+
+#submitButton:hover{
+    color: #fff;
+    background: #222;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+
 /*================== ========================*/
 .back-to-top{
     position: fixed;

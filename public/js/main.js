@@ -17,7 +17,7 @@ $(function(){
 	});
 
 	$(".more").click(function(){
-		$(".entry-lists").css("overflow","scroll").focus();
+		$(".entry-lists").css({"overflow":"visible","height":"auto"}).focus();
 	});
 
 	

@@ -37,7 +37,7 @@ router.post('/',async(req,res)=>{
 		Posts.create(NewPost,(err,createPost)=>{
 			if(err){
 				res.send(err)
-			}else{				
+			}else{			
 				res.redirect('/posts')
 			}
 		})
@@ -91,6 +91,7 @@ router.put('/:id',checkPostsOwner,async(req,res)=>{
 			if(err){
 				res.send(err)
 			}else{
+				req.flash("success","update post successfully")
 				res.redirect('/posts/'+ req.params.id)
 			}
 		})

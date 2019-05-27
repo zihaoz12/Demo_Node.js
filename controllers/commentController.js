@@ -28,6 +28,7 @@ router.post('/',isLoggedIn,(req,res)=>{
                     createdComment.save();
                     post.comments.push(createdComment);
                     post.save();
+                    req.flash("success","Thank you~ ")
                     res.redirect('/posts/'+ post._id)
                 }
             })
