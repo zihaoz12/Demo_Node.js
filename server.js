@@ -54,7 +54,15 @@ app.get('/about',(req,res)=>{
 	res.render('partials/about.ejs')
 });
 
+app.get('/facebookLogin',(req,res)=>{
+	req.flash("error","Temporarily Out of service")
+	res.redirect('back');
+})
 
+app.get('/googleLogin',(req,res)=>{
+	req.flash("error","Temporarily Out of service")
+	res.redirect('back');
+})
 
 
 app.listen(PORT,()=>{

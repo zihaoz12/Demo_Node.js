@@ -8,7 +8,7 @@ To see the app in action, go to [https://imgblogdemo1.herokuapp.com/](https://im
 
 ![screenshot]( https://imgur.com/L9Ui9cl.png)
 
-![screenshot]( https://imgur.com/QHhDgHc.png)
+![screenshot]( https://imgur.com/SuFbBWR.png)
 
 
 ## Features

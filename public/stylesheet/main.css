@@ -259,9 +259,12 @@ main{
 
 
 /*Create New routes*/
+.imugrLink{
+    margin:20px auto;
+}
 .posts-form{
     max-width: 500px;
-    margin: 0 auto;
+    margin: 15px auto;
     display: block;
 }
 .posts-form input,textarea{
