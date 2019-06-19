@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
 const passport = require('passport');
+const Post = require('../models/posts');
 const LocalStrategy = require('passport-local');
 
 router.get('/register',(req,res)=>{
@@ -57,5 +58,36 @@ router.get('/logout',(req,res)=>{
     res.redirect('/posts');
     
 });
+
+router.get('/users/:id',(req,res)=>{
+    User.findById(req.params.id,(err,foundUser)=>{
+        if(err){
+            res.send(err)
+        }
+        Post.find().where('author.id').equals(foundUser._id).exec((err,posts)=>{
+            if(err){
+                res.send(err)
+            }
+            res.render('users/show.ejs',{
+                user:foundUser,
+                posts:posts
+            })
+        })
+    });
+});
+
+
+
+// router.get('/users/:id', async (req, res) => {
+//     try {
+//         const user = await User.findById(req.params.id)     
+//         res.render('users/show.ejs', { 
+//             user,
+//         });
+//         console.log(user)
+//     } catch(err) {
+//         res.send(err);
+//     }
+// });
 
 module.exports = router;

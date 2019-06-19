@@ -1,0 +1,22 @@
+<% include ../partials/head%>
+<% include ../partials/header%>
+
+<h1>Hello <%= user.username%></h1>
+
+<div class="entry-lists">
+    <% posts.forEach((post)=> { %>
+    	<article class="entry-items">
+            <div class="post-thumb" style="background-image:url(<%= post.imgUrl%>)">
+            	<a href="/posts/<%=post._id%>">
+                	<h3 class="item-name"><%= post.title%></h3>
+                		<div class="item-author">
+                    		<p><%= post.author.username%></p>
+                		</div>
+            	</a>
+        	</div>
+    	</article>
+	<% }); %>
+
+</div>
+
+<% include ../partials/footer%>
