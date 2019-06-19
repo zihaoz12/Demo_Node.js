@@ -15,6 +15,7 @@ const User = require('./models/user');
 const postController = require('./controllers/postController');
 const userController = require('./controllers/userController');
 const commentController = require('./controllers/commentController');
+const adminController = require('./controllers/adminController');
 
 app.use(session({
   secret: 'keyboard cat',
@@ -45,6 +46,7 @@ app.use((req,res,next)=>{
 app.use('/posts',postController);
 app.use('/',userController);
 app.use('/posts/:id/comments',commentController);
+app.use('/admin',adminController);
 
 app.get('/',(req,res)=>{
 	res.render('index.ejs')
@@ -53,6 +55,10 @@ app.get('/',(req,res)=>{
 app.get('/about',(req,res)=>{
 	res.render('partials/about.ejs')
 });
+
+app.get('/admin',(req,res)=>{
+	res.render('admin/index.ejs');
+})
 
 app.get('/facebookLogin',(req,res)=>{
 	req.flash("error","Temporarily Out of service")
