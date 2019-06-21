@@ -9,7 +9,7 @@
                 <a href="/posts"><span><i class="fas fa-images fa-lg"></i></span></a>
                 <a href="/logout"><span><i class="fas fa-ban fa-lg"></i></span></a>
                 <% } else {%>
-                <a ><%= currentUser.username%></a>
+                <a href="/users/<%=currentUser._id%>"><%= currentUser.username%></a>
                 <a href="/posts"><span><i class="fas fa-images fa-lg"></i></span></a>
                 <a href="/logout">LogOut</a>
                 <%}%>

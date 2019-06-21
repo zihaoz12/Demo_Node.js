@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Posts = require('../models/posts');
 const Comment = require('../models/comments');
+const User = require('../models/user');
 
 
 //index routes
@@ -37,7 +38,7 @@ router.post('/',async(req,res)=>{
 		Posts.create(NewPost,(err,createPost)=>{
 			if(err){
 				res.send(err)
-			}else{			
+			}else{		
 				res.redirect('/posts')
 			}
 		})
