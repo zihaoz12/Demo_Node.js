@@ -36,5 +36,5 @@ Deployment:
 
 ## Up and Coming Features
 - Admin control
-- Likes section
-- User would see its own profile
+- Likes/Rating section
+
