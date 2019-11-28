@@ -500,3 +500,7 @@ footer{
     justify-content: space-around;
     align-items: center;
 }
+
+button{
+    outline: none;
+}

@@ -5,6 +5,7 @@ import About from './About';
 import Gallery from '../Component/Gallery';
 import Login from '../Component/Login';
 import Register from '../Component/Register';
+import NewPost from '../Component/NewPost';
 
 
 const Main = ()=>(
@@ -15,6 +16,7 @@ const Main = ()=>(
             <Route  path='/login' component={Login}/>
             <Route  path='/register' component={Register}/>
             <Route  path='/about' component={About}/>
+            <Route  path='/posts/new' component={NewPost}/>
         </Switch>
     </main>
 )

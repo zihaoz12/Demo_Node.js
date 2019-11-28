@@ -4,21 +4,26 @@ import axios from 'axios';
 const Gallery =()=>{
     const [posts,setPost] = useState([]);
     const getAllPosts = async ()=>{
-        const res = await axios.get('http://localhost:5000/posts');
+        const res = await axios('http://localhost:5000/posts');
         setPost(res.data);
-        console.log(res.data);
     };
-    // const getAllPosts =()=>{
-    //     fetch("http://localhost:5000/posts").then((res)=>{
-    //       return res.json();
-    //     }).then((res)=>[
-    //       setPost(res.data)
-    //     ]);
-    //     console.log(posts)
-    //   };
+  
     useEffect(()=>{
         getAllPosts();
-    },[])
+    },[]);
+
+    const allPosts = posts.map( post => {
+        return <article key={post._id} className="entry-items">
+                <div className="post-thumb" style={{backgroundImage:`url(${post.imgUrl})`}}>
+                    <a href='/'>
+                        <h3 className="item-name">{post.title}</h3>
+                    <div className="item-author">
+                        <p>{post.author.username}</p>
+                    </div>
+                    </a>
+                </div>
+                </article>
+    })
     return(
     <main>
        <div className="home">
@@ -26,9 +31,11 @@ const Gallery =()=>{
                 <div className="entry-header">
                     <h1>Hello World</h1>
                     <p>About Life, Images and Code</p>
-                    <button id="createPost"><a href="/">Create New Post</a></button>
+                    <button id="createPost"><a href="/posts/new">Create New Post</a></button>
                 </div>
-
+                <div className='entry-lists'>
+                    {allPosts}
+                </div>
             </div>
 
        </div>
