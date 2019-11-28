@@ -35,6 +35,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use(flash());
+app.use(require('cors')())
 
 app.use((req,res,next)=>{
 	res.locals.currentUser = req.user;

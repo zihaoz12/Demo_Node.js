@@ -8,10 +8,11 @@ const User = require('../models/user');
 //index routes
 router.get('/',async(req,res)=>{
 	const allPosts = await Posts.find({});
-	res.render('posts/posts.ejs',{
-		posts:allPosts,
-		currentUser:req.user
-	})
+	// res.render('posts/posts.ejs',{
+	// 	posts:allPosts,
+	// 	currentUser:req.user
+	// })
+	res.send(allPosts)
 });
 
 //new routes
