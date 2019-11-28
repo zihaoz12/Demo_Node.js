@@ -1,17 +1,16 @@
 import React from 'react';
-import Header from '../Component/Header';
-import Footer from '../Component/Footer';
+
+
 
 const Home = ()=>{
     return(
-        <div>
-            <Header/>
+        <div>      
                 <main>
                     <div className="container">
                         <section className="jumbotron">
                             <div className="video"> 
                                 <div className="video-frame">
-                                    <img src="/media/ocean/overlay-hero.png" alt="image frame"/> 
+                                    <img src="/media/ocean/overlay-hero.png" alt=""/> 
                                 </div>
                                 <div className="video-media">
                                     <video  playsInline autoPlay={true} loop={true} muted={true} data-autoplay x5-video-player-type="h5" poster="/media/ocean/ocean.png">
@@ -30,13 +29,12 @@ const Home = ()=>{
                             <div className="entry-header">
                                 <h1>Hello World</h1>
                                 <p>About Life, Images and Code</p>
-                                <a className='to-posts'>browse the gallery</a>
+                                <a  href="/gallery" className='to-posts'>browse the gallery</a>
                     
                             </div>
                         </div>
                     </div>
                 </main>
-            <Footer/>
         </div>
     )
     
