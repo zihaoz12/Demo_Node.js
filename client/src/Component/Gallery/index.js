@@ -2,10 +2,10 @@ import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 
 const Gallery =()=>{
-    const [posts,setPost] = useState([]);
+    const [posts,setPosts] = useState([]);
     const getAllPosts = async ()=>{
         const res = await axios('http://localhost:5000/posts');
-        setPost(res.data);
+        setPosts(res.data);
     };
   
     useEffect(()=>{
@@ -15,7 +15,7 @@ const Gallery =()=>{
     const allPosts = posts.map( post => {
         return <article key={post._id} className="entry-items">
                 <div className="post-thumb" style={{backgroundImage:`url(${post.imgUrl})`}}>
-                    <a href='/'>
+                    <a href="/posts/{post._id}">
                         <h3 className="item-name">{post.title}</h3>
                     <div className="item-author">
                         <p>{post.author.username}</p>

@@ -56,9 +56,10 @@ router.get('/:id',async(req,res)=>{
 			if(err){
 				res.send(err)
 			}else{
-				res.render('posts/show.ejs',{
-					post:foundPost
-				})
+				// res.render('posts/show.ejs',{
+				// 	post:foundPost
+				// })
+				res.send(foundPost)
 			}
 		})
 	}catch(error){
